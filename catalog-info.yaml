@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: f8vavnlix-go-gitops
+  description: This is GitOps manifest for f8vavnlix-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=f8vavnlix-go
+    backstage.io/kubernetes-id: f8vavnlix-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: f8vavnlix-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:f8vavnlix-go
